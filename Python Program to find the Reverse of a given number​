@@ -1,0 +1,23 @@
+#Method 1: Using Simple Iteration
+num = int(input())
+temp = num
+reverse = 0
+while num > 0:
+    reminder = num % 10
+    reverse = (reverse*10) + reminder
+    num = num//10
+
+print(reverse)
+#Method 2: Using String Slicing
+num = input()
+print(str(num)[::-1])
+#Method 3: Using Recursion
+def recursum(num,reverse):
+    if num == 0:
+        return reverse
+    reminder = int(num%10)
+    reverse = (reverse*10) + reminder
+    return recursum(int(num/10),reverse)
+num = int(input())
+reverse = 0
+print(recursum(num,reverse))
